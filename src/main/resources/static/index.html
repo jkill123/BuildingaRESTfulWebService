@@ -1,0 +1,111 @@
+<HTML>
+
+<HEAD>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<TITLE>New One</TITLE>
+</HEAD>
+
+<h1 align="center">Settings</H1>
+
+<BODY BGCOLOR="FFFFFF">
+
+<style>
+h1 {
+	padding-top: 20px;
+}
+html, body {
+    margin:0;
+    padding:0;
+    height: 100%;
+    width: 100%;
+}
+
+table {
+	margin:10px;
+	margin-right: 50px;
+    padding:20px;
+    height: 90%;
+    width: 98%;
+}
+button {
+    margin:0;
+    padding:0;
+    height: 100%;
+    width: 100%;
+}
+div{
+    margin:0;
+    padding:0;
+    height: 50%;
+    width: 100%;
+}
+form {
+    margin:0;
+    padding:0;
+    height: 100%;
+    width: 100%;
+}
+input {
+    margin:0;
+    padding:0;
+    height: 100%;
+    width: 100%;
+}
+
+</style>
+<table align="center">
+	<tr>
+		<td>
+			<form method="post">
+				<input type="hidden" name="id" value="1">
+				<button type="button" name="knopka1">Knopka 1</button>
+			</form>
+		</td>
+		<td>
+			<form method="post">
+				<input type="hidden" name="id" value="2">
+				<button type="button" name="knopka2">Knopka 2</button>
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<form method="post">
+				<input type="hidden" name="id" value="3">
+				<button type="button" name="knopka3">Knopka 3</button>
+			</form>
+		</td>
+		<td>
+			<form method="post">
+				<input type="hidden" name="id" value="4">
+				<button type="button" name="knopka4">Knopka 4</button>
+			</form>
+		</td>
+	</tr>
+	
+</table>
+
+<script>
+
+function foo(event) {
+
+	let $elem = $(event.currentTarget);
+	//let url = 'http:\\localhost:8080\send_data';
+	let url = 'https://arbitaspay.com';
+	
+	
+	$.post(url, {'text':$elem.text()}, function(json){
+
+	}, 'json');
+
+}
+
+$(function() {
+	$('button').on('click', foo);
+});
+
+</script>
+
+</BODY>
+
+</HTML>
